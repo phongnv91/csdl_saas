@@ -44,7 +44,14 @@
       - TinhTpId int -> Id của Tỉnh, Thành Phố 
       - HuyenQuanId int -> Id của Huyện, Quận
       - XaPhuongId int -> Id của Xã, Phường
-      - CreatedAt datetime  -> Thời gian tạo    
+      - CreatedAt datetime  -> Thời gian tạo
+
+    3) CuaHangDanhMuc: Lưu lại các danh mục hàng hóa mà Cửa Hàng đang bán
+      - ChdmId bigint [primary key, increment] -> Khóa chính, tự tăng
+      - CuaHangId int -> Id của Cửa Hàng
+      - DanhMucId int -> Id của Danh mục
+      - CreatedAt datetime -> Thời gian tạo
+        
 ### 1.2.3. Bảng phục vụ thông tin Khách Hàng
     1) KhachHang : Thông tin mỗi Row là 1 khách hàng
       - KhachHangId int [primary key, increment] -> Khóa chính, tự tăng
