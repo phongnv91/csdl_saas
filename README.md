@@ -12,7 +12,8 @@
     - Địa Chỉ có có thể được đưa ra để phân loại.
     - Có một số Log theo yêu cầu  
 ##  1.2. Thiết kế chi tiết
-### 1.2.1. Bảng phục vụ thông tin Địa Chỉ:
+### 1.2.1. Thiết kế các bảng dữ liệu
+### 1.2.1.1. Bảng phục vụ thông tin Địa Chỉ:
     1) TinhTp : Các địa điểm Tỉnh, Thành Phố trên cả Nước
       - TinhTpId int [primary key, increment] -> Khóa chính, tự tăng.
       - Ten nvarchar(50) -> Tên của Tỉnh, Thành Phố.
@@ -26,7 +27,7 @@
       - XaPhuongId int [primary key, increment] -> Khóa chính, tự tăng
       - HuyenQuanId int -> Id của Huyện, Quận mà Xã, Phường đó trực thuộc
       - Ten nvarchar(50) -> Tên của Xã, Phường  
-### 1.2.2. Bảng phục vụ thông tin Cửa Hàng
+### 1.2.1.2. Bảng phục vụ thông tin Cửa Hàng
     1) NganHang : Các ngân hàng và thông tin
       - NganHangId int [primary key, increment] -> Khóa chính, tự tăng
       - Code (varchar(20) -> Mã ngân hàng
@@ -44,6 +45,7 @@
       - TinhTpId int -> Id của Tỉnh, Thành Phố 
       - HuyenQuanId int -> Id của Huyện, Quận
       - XaPhuongId int -> Id của Xã, Phường
+      - UpdatedAt datetime -> Thời gian cập nhật
       - CreatedAt datetime  -> Thời gian tạo
 
     3) CuaHangDanhMuc: Lưu lại các danh mục hàng hóa mà Cửa Hàng đang bán
@@ -52,7 +54,7 @@
       - DanhMucId int -> Id của Danh mục
       - CreatedAt datetime -> Thời gian tạo
         
-### 1.2.3. Bảng phục vụ thông tin Khách Hàng
+### 1.2.1.3. Bảng phục vụ thông tin Khách Hàng
     1) KhachHang : Thông tin mỗi Row là 1 khách hàng
       - KhachHangId int [primary key, increment] -> Khóa chính, tự tăng
       - Username varchar(50) -> Tên đăng nhập
@@ -66,6 +68,7 @@
       - TinhTpId int -> Id của Tỉnh, Thành Phố
       - HuyenQuanId int -> Id của Huyện, Quận
       - XaPhuongId int -> Id của Phường, Xã
+      - UpdatedAt datetime -> Thời gian cập nhật
       - CreatedAt datetime -> Thời gian tạo
         
     2) DiaChiGiaoHang: Thông tin về địa chỉ giao hàng của khách hàng
@@ -78,7 +81,7 @@
       - XaPhuongId int -> Id của Xã, Phường
       - DienThoai varchar(20) -> Số điện thoại của người nhận
       - IsDefault bit -> Địa chỉ mặc định gửi hàng về khi khách hàng đặt hàng
-### 1.2.4. Bảng phục vụ thông tin Sản Phẩm:
+### 1.2.1.4. Bảng phục vụ thông tin Sản Phẩm:
     1) NhaSanXuat: Thông tin về nhà sản xuất
       - NsxId int [primary key, increment] -> Khóa chính, tự tăng
       - Ten nvarchar(200) -> Tên nhà sản xuất
@@ -134,8 +137,6 @@
       - ImageUrl varchar(200) -> Link ảnh đại diện
       - DonGia int -> Đơn giá theo phân loại
       - SoLuong int -> Số lượng sản phẩm còn trong kho
-      - UpdatedAt datetime -> Thời gian cập nhật
-      - CreatedAt datetime -> Thời gian tạo
 
     8) SanPhamReview: Thông tin về các chỉ số đánh giá của người dùng cho sản phẩm. 
       - SanPhamId int [primary key] -> Id của sản phẩm
@@ -149,7 +150,7 @@
       - SoLanNhanXet int -> Tổng số lượt bình luật
       - DiemTrungBinh float -> Điểm trung bình của sản phẩm
       - UpdatedAt datetime -> Thời gian cập nhật
-### 1.2.5.Bảng phục vụ thông tin Vận chuyển
+### 1.2.1.5.Bảng phục vụ thông tin Vận chuyển
     1) DoiTacVanChuyen: Thông tin của đối tác vận chuyển
       - DtvcId int [primary key, increment] -> Khóa chính, tự tăng
       - Ten nvarchar (200) -> Tên đối tác vận chuyển
@@ -160,6 +161,7 @@
       - XaPhuongId int -> Id Xã, Phường
       - DienThoai varchar (20) -> Số điện thoại liên hệ
       - Email varchar (50) -> Email liên hệ
+      - UpdatedAt datetime -> Thời gian cập nhật
       - CreatedAt datetime -> Thời gian tạo
       
     2) PhuongThucVanChuyen: Thông tin về phương thức vận chuyển của từng đối tác
@@ -171,8 +173,8 @@
       - DonGia int -> Đơn giá vận chuyển (cần có công thức cụ thể)
       - GiaMin int -> Mức giá vận chuyển thấp nhất. Vd: Theo đơn gian là 5k nhưng GiaMin = 10k thì lấy GiaMin
       - GiaMax int -> Mức giá vận chuyển cao nhất
-      - CreatedAt datetime -> Thời gian tạo
-### 1.2.6 Bảng phục vụ thông tin Đơn hàng
+
+### 1.2.1.6 Bảng phục vụ thông tin Đơn hàng
     1) DonHang: Thông tin đơn hàng
       - DonHangId bigint [primary key, increment] -> Khóa chính, tự tăng
       - KhachHangId int -> Id của khách hàng
@@ -195,7 +197,7 @@
       - DonGia int -> Đơn giá của sản phẩm
       - SoLuong int -> Số lượng đặt hàng
       - TongTien int -> Tổng tiền 
-### 1.2.7 Bảng phục vụ Log 1 số thông tin 
+### 1.2.1.7 Bảng phục vụ Log 1 số thông tin 
     1) LogGiaSanPham: Log việc thay đổi giá sản phẩm
       - LogId bigint [primary key, increment]: Khóa chính, tự tăng
       - SanPhamId int: Id của sản phẩm
@@ -224,3 +226,5 @@
       - TrangThai int -> Trạng thái của đơn hàng
       - ThongTinTrangThai nvarchar (1000) -> Thông tin của trạng thái
       - CreatedAt datetime -> Thời gian tạo
+
+ ### 1.2.2 Mô hình quan hệ 
