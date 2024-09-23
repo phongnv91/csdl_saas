@@ -225,6 +225,21 @@
       - TrangThai int -> Trạng thái của đơn hàng
       - ThongTinTrangThai nvarchar (1000) -> Thông tin của trạng thái
       - CreatedAt datetime -> Thời gian tạo
-
  ### 1.2.2 Sơ đồ quan hệ ERD
-     ![ERD](https://github.com/phongnv91/csdl_saas/blob/main/erd_saas.png)
+     Là ảnh "erd_saas.png" trong dự án 
+# 2. Hướng dẫn cài đặt và chạy truy vấn
+## 2.1. Hướng dẫn cài đặt
+### 2.1.1 Tạo Database
+        - Connect vào Sql server và tạo Database tên là "Saas_1"
+### 2.1.2 Tạo cấu trúc bảng và quan hệ
+        - Chọn New Query và Paste nội dung ở file "setup.sql" và Run nó
+### 2.1.3 Chèn dữ liệu mẫu
+        - Chọn New Query và Paste nội dung ở file "data.sql" và Run nó
+### 2.1.2 Setup để chạy truy vấn yêu cầu
+        - Chọn New Query và Paste nội dung ở file "query.sql" và Run nó
+## 2.2. Hướng dẫn chạy các truy vấn
+        Các truy vấn được viết dưới dạng Store Procedure nên cách chạy các truy vấn là:
+         - Vào Programmability / Store Procedures trong Database
+         - Click chuột phải vào từng Store Procedure và chọn Execute Store Procedure... và điền các tham số cần thiết
+        
+    
