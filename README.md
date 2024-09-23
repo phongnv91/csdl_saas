@@ -227,4 +227,5 @@
       - ThongTinTrangThai nvarchar (1000) -> Thông tin của trạng thái
       - CreatedAt datetime -> Thời gian tạo
 
- ### 1.2.2 Mô hình quan hệ 
+ ### 1.2.2 Sơ đồ quan hệ ERD
+     ![ERD](https://github.com/phongnv91/csdl_saas/blob/main/erd_saas.png)
