@@ -184,7 +184,7 @@
       - TongTien int -> Tổng tiền của đơn
       - SoTienThanhToan int -> Số tiền đã thanh toán
       - HinhThucTT int -> Hình thức thanh toán. Vd: 0 : Tiền mặt, 1: Thẻ Nội địa, 2: Thẻ Visa, 3: Ví điện tử
-      - TrangThai int -> Trạng thái của đơn hàng. Vd: -1: Chưa mua, 0: Đã mua, đang chờ lấy hàng, 1: Đang vận chuyển, 2: Giao hàng thành công
+      - TrangThai int -> Trạng thái của đơn hàng. Vd: -2: Giao hàng thất bại, -1: Chưa mua, 0: Đã mua, đang chờ lấy hàng, 1: Đang vận chuyển, 2: Giao hàng thành công
       - ThongTinTrangThai nvarchar (1000) -> Thông tin của trạng thái. Ví dụ: Đang Vận Chuyển, Ở tại kho Long Biên
       - UpdatedAt datetime -> Thời gian cập nhật
       - CreatedAt datetime - > Thời gian tạo
