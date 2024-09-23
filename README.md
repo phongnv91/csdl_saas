@@ -30,17 +30,17 @@
 ### 1.2.1.2. Bảng phục vụ thông tin Cửa Hàng
     1) NganHang : Các ngân hàng và thông tin
       - NganHangId int [primary key, increment] -> Khóa chính, tự tăng
-      - Code (varchar(20) -> Mã ngân hàng
+      - Code varchar(20) -> Mã ngân hàng
       - Ten nvarchar(50) -> Tên ngân hàng
         
     2) CuaHang: Thông tin mỗi Row là 1 cửa hàng
       - CuaHangId int [primary key, increment]) -> Khóa chính, tự tăng
       - Ten nvarchar(200) -> Tên cửa hàng
       - MoTa nvarchar(1000) -> Mô tả ngắn về cửa hàng
-      - DienThoai (varchar(20) -> Số điện thoại của cửa hàng
-      - Email (varchar(50) -> Email liên hệ
+      - DienThoai varchar(20) -> Số điện thoại của cửa hàng
+      - Email varchar(50) -> Email liên hệ
       - NganHangId int -> Id của ngân hàng
-      - SoTk (varchar(20) -> Số tài khoản ngân hàng
+      - SoTk varchar(20) -> Số tài khoản ngân hàng
       - DiaChi nvarchar(200) -> Địa chỉ cụ thể. Vd: Số 01, Lê Văn Lương
       - TinhTpId int -> Id của Tỉnh, Thành Phố 
       - HuyenQuanId int -> Id của Huyện, Quận
