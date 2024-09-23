@@ -147,8 +147,7 @@
       - Diem2 int -> Số lượt đánh giá 2 sao
       - Diem1 int -> Số lượt đánh giá 1 sao
       - Diem0 int -> Số lượt đánh giá 0 sao
-      - SoLanNhanXet int -> Tổng số lượt bình luật
-      - DiemTrungBinh float -> Điểm trung bình của sản phẩm
+      - SoLanNhanXet int -> Tổng số lượt bình luận
       - UpdatedAt datetime -> Thời gian cập nhật
 ### 1.2.1.5.Bảng phục vụ thông tin Vận chuyển
     1) DoiTacVanChuyen: Thông tin của đối tác vận chuyển
