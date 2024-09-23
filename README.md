@@ -183,7 +183,7 @@
       - TienVanChuyen int -> Số tiền vận chuyển
       - TongTien int -> Tổng tiền của đơn
       - SoTienThanhToan int -> Số tiền đã thanh toán
-      - HinhThucThanhToan nvarchar (200) -> Hình thức thanh toán
+      - HinhThucTT int -> Hình thức thanh toán. Vd: 0 : Tiền mặt, 1: Thẻ Nội địa, 2: Thẻ Visa, 3: Ví điện tử
       - TrangThai int -> Trạng thái của đơn hàng
       - ThongTinTrangThai nvarchar (1000) -> Thông tin của trạng thái. Ví dụ: Đang Vận Chuyển, Ở tại kho Long Biên
       - UpdatedAt datetime -> Thời gian cập nhật
